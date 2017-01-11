@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="primary">#5c82a5</color>
+  <color name="primary_dark">#294F72</color>
+  <color name="primary_darker">#2f465b</color>
+
+  <color name="blue_gray">#445564</color>
+
+  <color name="black">#000000</color>
+    <color name="iron">#CCCCCC</color>
+  <color name="white">#ffffff</color>
+
+  <color name="my_spinner_text_color">#808080</color>
+
+    <color name="bg_light_grey">#E9E9E9</color>
+  <color name="super_light_grey">#FAFAFA</color>
+
+  <color name="background_dim_overlay">#99000000</color>
+</resources>

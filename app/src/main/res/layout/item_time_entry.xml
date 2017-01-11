@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.egineering.recyclerViewPOC.viewmodels.TimeEntryItemViewModel"/>
+    </data>
+
+    <android.support.v7.widget.CardView android:id="@+id/card_view"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginBottom="2dp"
+                                        android:layout_marginTop="2dp"
+                                        card_view:cardCornerRadius="2dp"
+                                        card_view:cardUseCompatPadding="true">
+
+
+        <android.support.percent.PercentRelativeLayout
+            android:id="@+id/edit_dialog_container"
+            android:clickable="true"
+            android:onClick="@{viewModel.onClickTimeEntry}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/touchable_background_white"
+            android:gravity="center_vertical"
+            android:paddingTop="16sp"
+            android:paddingBottom="16sp"
+            app:layout_marginStartPercent="5%">
+
+            <TextView
+                android:id="@+id/text_entry_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:onClick="@{viewModel.onClickTimeEntry}"
+                android:text="@{viewModel.entryDate}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_large_body"
+                app:layout_marginLeftPercent="5%"/>
+
+            <TextView
+                android:id="@+id/day_of_week"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="4sp"
+                android:paddingTop="6sp"
+                android:layout_alignTop="@id/text_entry_date"
+                android:layout_toEndOf="@+id/text_entry_date"
+                android:onClick="@{viewModel.onClickTimeEntry}"
+                android:text="@{viewModel.dayOfWeek}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_tiny_body"
+                app:layout_marginLeftPercent="1%"/>
+
+            <TextView
+                android:id="@+id/text_entry_hours"
+                app:layout_widthPercent="20%"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:gravity="end"
+                android:onClick="@{viewModel.onClickTimeEntry}"
+                android:text="@{String.valueOf(viewModel.duration)}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_large_body"
+                app:layout_marginRightPercent="5%"/>
+
+            <TextView
+                android:id="@+id/text_entry_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_entry_date"
+                android:bufferType="spannable"
+                android:text="@{viewModel.taskName}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_body"
+                android:layout_alignStart="@+id/text_entry_date"/>
+            <!--android:onClick="@{viewModel.onClickAuthor}"/> -->
+
+            <TextView
+                android:id="@+id/text_entry_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_entry_task"
+                android:layout_marginTop="8sp"
+                android:background="@drawable/multiline_textview_border"
+                android:padding="6dp"
+                android:text="@{viewModel.description}"
+                android:textColor="@color/primary_dark"
+                android:textSize="@dimen/text_small_body"
+                android:layout_alignStart="@+id/text_entry_date"
+                app:layout_marginRightPercent="5%"/>
+
+        </android.support.percent.PercentRelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</layout>

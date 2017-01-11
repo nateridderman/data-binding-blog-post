@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">RecyclerView Demo</string>
+
+    <!-- &#160 = non-breakable whitespace -->
+    <string name="hours">&#160;hrs</string>
+
+    <string name="no_entries_found">No Entries</string>
+
+</resources>
