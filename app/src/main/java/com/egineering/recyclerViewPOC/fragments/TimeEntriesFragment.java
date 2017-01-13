@@ -85,10 +85,10 @@ public class TimeEntriesFragment extends Fragment {
 	// Retrieve time entries for user.
 	public void getTimeEntries() {
 
-		for (int i  = 0; i < 15; i++) {
+		for (int i  = 1; i <= 15; i++) {
 			TimeEntryViewModel timeEntry = new TimeEntryViewModel();
 			timeEntry.duration = String.valueOf(0.5 + i);
-			timeEntry.entryDate = "12/" + i + "/2016";
+			timeEntry.entryDate = "1/" + i + "/2017";
 			timeEntry.taskName = "task name";
 			timeEntry.taskDescription = "task desc";
 
